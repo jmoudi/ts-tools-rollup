@@ -1,0 +1,35 @@
+{
+  "extends": "/home/jm/Projects/Config/tsc/tsconfig.module",
+  "compilerOptions": {
+    "watch": true,
+    "inlineSources": false,
+    "sourceMap": false,
+    "declaration": true,
+    "declarationMap": true,
+    "composite": true,
+    //"listEmittedFiles": true,
+    "noImplicitAny": false,
+    //"declarationDir": "./dist/",
+    //"rootDir": ".", //"./src/",
+    "rootDir": "./src/", 
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [ "*" ],
+      "@/*" : [ "./src/*"],
+      "@Modules/*" : [ "../../../../Modules/*"],
+    },
+    //"outFile": "./dist/bundle.js",
+
+    //"composite": true
+  },
+  "include": [
+    "./src/**/*" 
+  ],
+  "exclude": [
+    "**/test/", "**/config/"
+  ],
+/*   "references": [
+    { "path": "."  }
+  ]   */
+}

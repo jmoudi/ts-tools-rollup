@@ -1,0 +1,7 @@
+09c4ac6e2329e15a5606fe619a8eadbe
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    input: '@/test/data/t1.ts',
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvam0vUHJvamVjdHMvTW9kdWxlcy90b29scy9yb2xsdXAvdGVzdC9kYXRhL3JvbGx1cC5jb25maWcudHMiLCJtYXBwaW5ncyI6Ijs7QUFBQSxrQkFBZTtJQUNYLEtBQUssRUFBRSxtQkFBbUI7Q0FDN0IsQ0FBQSIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS9qbS9Qcm9qZWN0cy9Nb2R1bGVzL3Rvb2xzL3JvbGx1cC90ZXN0L2RhdGEvcm9sbHVwLmNvbmZpZy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCB7XG4gICAgaW5wdXQ6ICdAL3Rlc3QvZGF0YS90MS50cycsXG59Il0sInZlcnNpb24iOjN9

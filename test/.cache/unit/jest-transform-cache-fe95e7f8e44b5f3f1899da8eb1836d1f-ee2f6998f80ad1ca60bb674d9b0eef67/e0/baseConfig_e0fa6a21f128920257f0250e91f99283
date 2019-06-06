@@ -1,0 +1,66 @@
+70b40b9c0a49457a67b419bfca53add2
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+//import {path} from '/home/jm/Projects/Modules/tools/rollup';
+const rollup_1 = require("/home/jm/Projects/Modules/tools/rollup");
+const defaults = {
+    globals: {}
+};
+const options = {
+    name: 'AAAA',
+    minify: false
+};
+function handleWarning(warning) {
+    const ignoreWarnings = ['CIRCULAR_DEPENDENCY', 'CIRCULAR', 'THIS_IS_UNDEFINED'];
+    if (!(typeof warning === 'string')) {
+        if (ignoreWarnings.some(type => type === warning.code)) {
+            return;
+        }
+        console.warn(warning.message);
+    }
+}
+exports.handleWarning = handleWarning;
+function pathsTransformer() {
+}
+exports.pathsTransformer = pathsTransformer;
+exports.baseConfig = () => {
+    const { name } = options;
+    console.log(options);
+    const baseConf = {
+        output: {
+            extend: true,
+            file: `dist/${name}${options.minify ? '.min' : ''}.js`,
+            format: 'umd',
+            name: `${name}`,
+            libraryName: name,
+            globals: {
+            //'crypto': 'crypto'
+            },
+            exports: 'named',
+            sourcemap: options.minify ? false : true
+        },
+        globals: Object.assign({}, defaults.globals),
+        plugins: [
+            /*       AliasPlugin({
+                    '@/':'./src/'
+                    //'@tarojs/taro': join(cwd, '../taro/src/index'),
+                    //'@tarojs/utils': join(cwd, '../taro-utils/dist/index')
+                  }), */
+            // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
+            rollup_1.TypescriptPlugin({
+            /*      transformers: [
+                   (service) => pathsTransformer()
+                 ] */
+            }),
+            rollup_1.ResolvePlugin({ extensions: ['.ts', '.tsx'], module: true }),
+            //CommonjsPlugin({ include: 'node_modules/**' }),
+            rollup_1.SourcemapsPlugin(),
+            rollup_1.ReplacePlugin({
+                '@': (str) => 'OOOOO'
+            })
+        ],
+        onwarn: handleWarning
+    };
+    return baseConf;
+};
+//# sourceMappingURL=baseConfig.js.map

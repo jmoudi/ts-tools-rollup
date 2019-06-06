@@ -1,0 +1,8 @@
+37b53b73c0ad9bf4bd2e7227af51bec6
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var underscore_1 = require("underscore");
+exports.reduce = underscore_1.reduce;
+/* import reduce = require('lodash/reduce');
+import reduceRight = require('lodash/reduceRight'); */ 
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvam0vUHJvamVjdHMvTW9kdWxlcy9mcC9zcmMvY29sbGVjdGlvbnMvcmVkdWNlLnRzIiwibWFwcGluZ3MiOiI7O0FBQUEseUNBQWtDO0FBQTFCLDhCQUFBLE1BQU0sQ0FBQTtBQUVkO3NEQUNzRCIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS9qbS9Qcm9qZWN0cy9Nb2R1bGVzL2ZwL3NyYy9jb2xsZWN0aW9ucy9yZWR1Y2UudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IHtyZWR1Y2V9IGZyb20gJ3VuZGVyc2NvcmUnO1xuXG4vKiBpbXBvcnQgcmVkdWNlID0gcmVxdWlyZSgnbG9kYXNoL3JlZHVjZScpO1xuaW1wb3J0IHJlZHVjZVJpZ2h0ID0gcmVxdWlyZSgnbG9kYXNoL3JlZHVjZVJpZ2h0Jyk7ICovIl0sInZlcnNpb24iOjN9
