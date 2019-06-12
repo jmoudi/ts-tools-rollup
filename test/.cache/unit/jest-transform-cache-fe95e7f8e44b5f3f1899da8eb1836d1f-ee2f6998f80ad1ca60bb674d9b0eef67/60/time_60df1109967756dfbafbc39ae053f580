@@ -1,0 +1,8 @@
+afece4409f2424a35dd4e4214c5ce1e7
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Time {
+}
+Time.now = () => new Date().toISOString().slice(0, 19);
+exports.Time = Time;
+//# sourceMappingURL=time.js.map

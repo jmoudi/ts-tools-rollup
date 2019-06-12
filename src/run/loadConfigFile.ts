@@ -1,11 +1,10 @@
 import path from 'path';
 import rollup from 'rollup';
-import tc from 'turbocolor';
-import { InputOptions, RollupBuild, RollupOutput } from '../../../src/rollup/types';
-import relativeId from '../../../src/utils/relativeId';
-import { handleError, stderr } from '../logging';
-import batchWarnings from './batchWarnings';
-
+import {cyan,green,underline,gray,red,yellow,bold,dim} from '@/utils/color';
+import { InputOptions, RollupBuild, RollupOutput } from '@/types';
+import {relativeId,ms,dateTime,prettyBytes} from '@/utils';
+import { batchWarnings, handleError, stderr } from './logging';
+ 
 interface NodeModuleWithCompile extends NodeModule {
 	_compile(code: string, filename: string): any;
 }
@@ -14,7 +13,7 @@ function interopDefault<T>(ex: T): T {
 	return ex && typeof ex === 'object' && 'default' in ex ? (ex as any).default : ex;
 }
 
-export default function loadConfigFile(
+export function loadConfigFile(
 	configFile: string,
 	commandOptions: any = {}
 ): Promise<InputOptions[]> {
@@ -32,7 +31,7 @@ export default function loadConfigFile(
 		})
 		.then((bundle: RollupBuild) => {
 			if (!silent && warnings.count > 0) {
-				stderr(tc.bold(`loaded ${relativeId(configFile)} with warnings`));
+				stderr(bold(`loaded ${relativeId(configFile)} with warnings`));
 				warnings.flush();
 			}
 
@@ -44,13 +43,14 @@ export default function loadConfigFile(
 		.then(({ output: [{ code }] }: RollupOutput) => {
 			// temporarily override require
 			const defaultLoader = require.extensions['.js'];
-			require.extensions['.js'] = (module: NodeModuleWithCompile, filename: string) => {
+			const aa = (module: NodeModuleWithCompile, filename: string) => {
 				if (filename === configFile) {
 					module._compile(code, filename);
 				} else {
 					defaultLoader(module, filename);
 				}
 			};
+			require.extensions['.js'] = aa
 
 			delete require.cache[configFile];
 

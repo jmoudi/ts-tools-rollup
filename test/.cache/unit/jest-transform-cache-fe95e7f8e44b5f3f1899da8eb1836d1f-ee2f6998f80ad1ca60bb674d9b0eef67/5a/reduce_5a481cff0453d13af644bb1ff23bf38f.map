@@ -1,0 +1,1 @@
+{"file":"/home/jm/Projects/Modules/fp/src/collections/reduce.ts","mappings":";;AAAA,yCAAkC;AAA1B,8BAAA,MAAM,CAAA;AAEd;sDACsD","names":[],"sources":["/home/jm/Projects/Modules/fp/src/collections/reduce.ts"],"sourcesContent":["export {reduce} from 'underscore';\n\n/* import reduce = require('lodash/reduce');\nimport reduceRight = require('lodash/reduceRight'); */"],"version":3}

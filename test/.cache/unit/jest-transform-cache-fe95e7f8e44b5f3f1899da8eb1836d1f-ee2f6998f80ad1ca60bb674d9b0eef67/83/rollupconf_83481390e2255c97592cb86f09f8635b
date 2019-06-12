@@ -1,0 +1,13 @@
+0bcd5dac5c21d87fc44241141888f4b1
+import {baseConfig} from '/home/jm/Projects/Config/rollup';
+import {default as customConf} from './data/rollup.config';
+import { 
+    RollupOptions,
+    merge,
+  } from '/home/jm/Projects/Modules/tools/rollup';
+
+  const conf ={
+    input: '@/test/data/t1.ts',
+}
+
+module.exports = merge(baseConfig(), conf)

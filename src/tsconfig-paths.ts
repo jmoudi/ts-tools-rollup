@@ -1,5 +1,5 @@
 import * as TsconfigPaths from 'tsconfig-paths';
-import {log, Logger} from '@Modules/logger';
+import {log, Logger} from '@lib/logger';
 import {resolve} from 'path';
 import {default as TsTransformPaths} from 'ts-transform-paths';
 import {default as ts} from 'typescript';

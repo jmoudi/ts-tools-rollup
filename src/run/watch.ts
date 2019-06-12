@@ -1,22 +1,27 @@
-import dateTime from 'date-time';
 import fs from 'fs';
-import ms from 'pretty-ms';
-import * as rollup from 'rollup';
 import onExit from 'signal-exit';
-import tc from 'turbocolor';
+import alternateScreen from './alternateScreen';
+import loadConfigFile from './loadConfigFile';
+
+import {relativeId,ms,dateTime} from '@/utils';
+import * as rollup from 'rollup';
+import {cyan,green,underline,gray,red,yellow,bold,dim} from '@/utils/color';
+
 import {
+	InputOptions,
 	InputOption,
+	OutputAsset,
+	OutputChunk,
+	OutputOptions,
 	RollupBuild,
 	RollupError,
 	RollupWatchOptions
-} from '../../../src/rollup/types';
-import mergeOptions from '../../../src/utils/mergeOptions';
-import relativeId from '../../../src/utils/relativeId';
-import { handleError, stderr } from '../logging';
-import alternateScreen from './alternateScreen';
-import batchWarnings from './batchWarnings';
-import loadConfigFile from './loadConfigFile';
-import { printTimings } from './timings';
+} from 'rollup';
+import { BatchWarnings,printTimings,batchWarnings,
+	handleError, stderr } from './logging';
+import {mergeOptions} from 'src/utils/mergeOptions';
+
+rollup
 
 interface WatchEvent {
 	code?: string;
@@ -32,7 +37,7 @@ interface Watcher {
 	on: (event: string, fn: (event: WatchEvent) => void) => void;
 }
 
-export default function watch(
+export function watch(
 	configFile: string,
 	configs: RollupWatchOptions[],
 	command: any,
@@ -106,7 +111,7 @@ export default function watch(
 
 				case 'START':
 					if (!silent) {
-						screenWriter(tc.underline(`rollup v${rollup.VERSION}`));
+						screenWriter(underline(`rollup v${rollup.VERSION}`));
 					}
 					break;
 
@@ -121,8 +126,8 @@ export default function watch(
 										.join(', ');
 						}
 						stderr(
-							tc.cyan(
-								`bundles ${tc.bold(input)} → ${tc.bold(event.output.map(relativeId).join(', '))}...`
+							cyan(
+								`bundles ${bold(input)} → ${bold(event.output.map(relativeId).join(', '))}...`
 							)
 						);
 					}
@@ -132,8 +137,8 @@ export default function watch(
 					warnings.flush();
 					if (!silent)
 						stderr(
-							tc.green(
-								`created ${tc.bold(event.output.map(relativeId).join(', '))} in ${tc.bold(
+							green(
+								`created ${bold(event.output.map(relativeId).join(', '))} in ${bold(
 									ms(event.duration)
 								)}`
 							)
@@ -152,7 +157,7 @@ export default function watch(
 	}
 
 	// catch ctrl+c, kill, and uncaught errors
-	const removeOnExit = onExit(close);
+	const removeOnExit = onExit(close as any);
 	process.on('uncaughtException', close);
 
 	// only listen to stdin if it is a pipe

@@ -18,6 +18,7 @@ describe(`c`, () => {
 describe(`merge`, () => {
     
     test(`merged c`, () => {
+        console.log(`customConf`, customConf);
         const mc = merge(baseConfig(), customConf); 
         console.log(`mc`, mc);
         expect(mc).toBeTruthy();
@@ -25,14 +26,4 @@ describe(`merge`, () => {
     })
 });
 
-describe(`build`, () => {
-    
-    test(`build c`, () => {
-        const mc = merge(baseConfig(), customConf); 
-        console.log(`mc`, mc);
-        expect(mc).toBeTruthy();
-
-
-
-    })
-});
+ 

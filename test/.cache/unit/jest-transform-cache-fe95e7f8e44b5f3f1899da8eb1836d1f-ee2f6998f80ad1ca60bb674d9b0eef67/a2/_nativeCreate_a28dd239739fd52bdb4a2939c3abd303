@@ -1,0 +1,7 @@
+9fb51b7d3f1c71d46b76a38c166609f8
+var getNative = require('./_getNative');
+
+/* Built-in method references that are verified to be native. */
+var nativeCreate = getNative(Object, 'create');
+
+module.exports = nativeCreate;

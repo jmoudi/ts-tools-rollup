@@ -7,7 +7,7 @@ export function getAliasName(resolved: string, unresolved?: string) {
 	return alias;
 }
 
-export default function relativeId(id: string) {
+export function relativeId(id: string) {
 	if (typeof process === 'undefined' || !isAbsolute(id)) return id;
 	return relative(process.cwd(), id);
 }

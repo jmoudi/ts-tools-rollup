@@ -1,3 +1,9 @@
+          
+          rollup -c rollup.conf.js
+          
+          rollup -c test/data/rollup.conf.js
+          
+          
             "noEmitHelpers": true
 
         
