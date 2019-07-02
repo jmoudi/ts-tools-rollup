@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const findRoot = require("find-root");
+exports.findRoot = findRoot;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL2hvbWUvam0vUHJvamVjdHMvTW9kdWxlcy9wYXRoL3NyYy9maW5kUm9vdC50cyIsIm1hcHBpbmdzIjoiOztBQUFBLHNDQUF1QztBQUMvQiw0QkFBUSIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvaG9tZS9qbS9Qcm9qZWN0cy9Nb2R1bGVzL3BhdGgvc3JjL2ZpbmRSb290LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBmaW5kUm9vdCA9IHJlcXVpcmUoJ2ZpbmQtcm9vdCcpO1xyXG5leHBvcnQge2ZpbmRSb290fVxyXG5cclxuIl0sInZlcnNpb24iOjN9

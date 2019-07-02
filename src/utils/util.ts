@@ -1,7 +1,7 @@
 import {rollup, RollupWarning, InputOption} from 'rollup';
 import {RollupOptions} from '../types';
 import * as path from 'path';
-import { findRoot } from '@lib/path';
+//import { findRoot } from '@lib/path';
 import { reduce,mergeDeep } from '@lib/fp';
 import { 
     ResolvePlugin, 
