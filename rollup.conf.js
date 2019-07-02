@@ -1,10 +1,13 @@
 import {baseConfig} from '/home/jm/Projects/Config/rollup';
+//const {baseConfig} = require('/home/jm/Projects/Config/rollup');
+//const {merge} = require('/home/jm/Projects/Tools/rollup');
 import { 
     merge,
-  } from '/home/jm/Projects/Modules/tools/rollup';
+} from '/home/jm/Projects/Tools/rollup';
 
-  const conf ={
-    input: './test/data/t1.ts',
+const conf = {
+    input: './test/data/index.ts',
+    //output: `./test/index.js`
 }
 const con = merge(baseConfig(), conf);
 console.log(`CON`, con);

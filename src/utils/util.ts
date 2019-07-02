@@ -46,11 +46,7 @@ export function findRoots(input: InputOption){
     }
     return Array.from(roots);
 } */
-
-export {
-    findRoot
-}
-
+ 
  
 /*
 

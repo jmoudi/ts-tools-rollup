@@ -1,0 +1,21 @@
+{
+  "extends": "/home/jm/Projects/Config/tsc/tsconfig.build-module",
+  "compilerOptions": {
+    "rootDir": "./src/",
+    "outDir": "./dist/",
+    "module": "es2015",
+    "target": "es2015"
+  },
+  "include": [
+    "./src/**/*.ts" 
+  ],
+  "references": [
+  ],
+  "exclude": [
+    "**/__ignored__",
+    "**/*.test.ts",
+    //"node_modules",
+    "build",
+    "dist"
+  ]
+}

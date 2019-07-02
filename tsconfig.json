@@ -1,31 +1,19 @@
 {
-  "extends": "/home/jm/Projects/Config/tsc/tsconfig.module",
+  "extends": "/home/jm/Projects/Config/tsc/tsconfig.build-module",
   "compilerOptions": {
-    "watch": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "declaration": true,
-    "declarationMap": true,
-    "noImplicitAny": false,
-    "declarationDir": "./dist/",
-    //"rootDir": ".", //"./src/",
-    "rootDir": "./src/", 
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": [ "*" ],
-      "@/*" : [ "./src/*"],
-      "@Modules/*" : [ "../../../Modules/*"],
-    },
+    "rootDir": "./src/",
+    "outDir": "./dist/"
   },
   "include": [
-    "./src/**/*.ts", 
+    "./src/**/*.ts" 
+  ],
+  "references": [
   ],
   "exclude": [
-    "**/test/", 
-    "**/config/"
-  ],
-/*   "references": [
-    { "path": "."  }
-  ]   */
+    "**/__ignored__",
+    "**/*.test.ts",
+    //"node_modules",
+    "build",
+    "dist"
+  ]
 }

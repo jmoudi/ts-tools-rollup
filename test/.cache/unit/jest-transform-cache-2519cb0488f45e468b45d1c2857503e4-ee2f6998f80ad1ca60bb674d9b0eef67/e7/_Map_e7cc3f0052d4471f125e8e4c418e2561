@@ -1,0 +1,8 @@
+6e6db9e05e392a887cccd9cccb9fdbee
+var getNative = require('./_getNative'),
+    root = require('./_root');
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map');
+
+module.exports = Map;

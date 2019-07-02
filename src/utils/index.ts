@@ -4,6 +4,5 @@ export * from "./relativeId";
 export * from "./time";
 export * from "./util";
 export * from "./prettyBytes";
-export * from "./mergeOptions";
 export * from "./ansiEscapes";
 

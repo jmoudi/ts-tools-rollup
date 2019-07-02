@@ -1,0 +1,1 @@
+{"file":"/home/jm/Projects/Tools/rollup/test/data/t1.ts","mappings":"","names":[],"sources":["/home/jm/Projects/Tools/rollup/test/data/t1.ts"],"sourcesContent":["export const enum OO {\n    O = '334',\n    P = '334',\n    R = 'ookdf'\n}"],"version":3}
