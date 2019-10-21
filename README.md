@@ -1,7 +1,16 @@
-        
+		"watch": "ts-node-dev --transpileOnly --respawn --prefer-ts --require /home/jm/Projects/Tools/node-debug/src/loadpaths.ts  ./src/watcher.ts",
+
+ts-node-dev --transpileOnly --respawn --prefer-ts ./test/test1.ts
 rollup -c rollup.conf.js
+rollup -c rollup.c.js
+
+rollup -c /home/jm/Projects/Apps/WebScriptsProvider/packages/wsp-build/rollup.c.js
 
 rollup -c rollup.config.js
+
+rollup -c __tests__/rollup.config.js
+
+
 
 nodemon --config /home/jm/Projects/Config/nodemon/nodemon.base.json -- ./rollup.conf.js
 nodemon --config /home/jm/Projects/Config/nodemon/nodemon.base.json -- ./test.js

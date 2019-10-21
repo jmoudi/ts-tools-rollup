@@ -1,44 +1,30 @@
 {
   "name": "@tools/rollup",
-  "version": "0.0.3",
+  "version": "1.0.4",
   "main": "./dist/index.js",
   "source": "./src/index.ts",
   "browser": "./dist/index.js",
-  "files": [
-    "src",
-    "dist",
-    "./plugins.js",
-    "./build.js"
-  ],
   "scripts": {
+    "run": "ts-node-dev --transpileOnly --respawn --prefer-ts ./src/main.ts",
     "test": "jest --watch",
     "test:nw": "jest",
     "lint": "tslint -c ./config/tslint.json -p .",
     "compile": "tsc --build --pretty --verbose --listEmittedFiles",
     "compile-watch": "tsc --build --watch",
     "test3": "jest -c ./config/jest.config.js",
-    "build": "rollup -c node:@zerollup/rollup-preset-ts",
-    "run": "nodemon --config ./config/nodemon.config.json -- ./test/main.test.ts",
-    "run2": "nodemon --config ./config/nodemon.config.json -- ./test/index.ts",
-    "run1": "ts-node -r tsconfig-paths/register ./src/main.ts"
+    "build": "rollup -c node:@zerollup/rollup-preset-ts"
   },
   "dependencies": {
-    "@lib/logger": "file:/home/jm/Projects/Modules/logger",
-    "@lib/async": "file:/home/jm/Projects/Modules/async",
-    "@lib/string": "file:/home/jm/Projects/Modules/string",
-    "@lib/fp": "file:/home/jm/Projects/Modules/fp",
-    "@lib/fs": "file:/home/jm/Projects/Modules/fs",
-    "@lib/path": "~/Projects/Modules/path",
-    "@types/events": "",
-    "@types/node": "",
-    "@types/signal-exit": "",
+    "@ampproject/rollup-plugin-closure-compiler": "",
+    "@types/lodash": "",
     "@types/require-relative": "",
     "@types/rollup-plugin-sourcemaps": "",
+    "@types/signal-exit": "",
     "@zerollup/ts-transform-paths": "",
-    "colorette": "",
     "ansi-escapes": "",
+    "colorette": "",
     "date-time": "",
-    "signal-exit": "",
+    "lodash": "",
     "pretty-bytes": "",
     "pretty-ms": "",
     "require-relative": "",
@@ -59,16 +45,14 @@
     "rollup-plugin-typescript2": "",
     "rollup-plugin-uglify": "",
     "rollup-pluginutils": "",
+    "signal-exit": "",
     "ts-transform-paths": "",
-    "ttypescript": ""
+    "ttypescript": "",
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
     "@types/jest": "",
-    "jest": "",
-    "ts-jest": "",
-    "typescript": "",
-    "tsconfig-paths": "",
-    "tslib": ""
+    "@types/node": ""
   },
   "private": true,
   "author": "Jonas Moudi"

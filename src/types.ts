@@ -1,7 +1,11 @@
-export { RollupOptions, 
+export { 
+    RollupOptions, 
     InputOptions,InputOption, 
     ExternalOption,
-    RollupBuild, RollupOutput
+    RollupBuild, 
+    RollupOutput,
+    Plugin
 } from 'rollup';
+
 
 //export const RollupOptions 
