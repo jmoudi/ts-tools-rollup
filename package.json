@@ -5,12 +5,15 @@
   "source": "./src/index.ts",
   "browser": "./dist/index.js",
   "scripts": {
+    "run1": "ts-node-dev --transpileOnly --respawn --prefer-ts --require /home/jm/Projects/Tools/node/ts-node-dev/src/loadpaths.ts ./test/build.ts",
+    "run:test": "ts-node-dev --transpileOnly --respawn --prefer-ts ./test/build.ts",
     "run": "ts-node-dev --transpileOnly --respawn --prefer-ts ./src/main.ts",
     "test": "jest --watch",
     "test:nw": "jest",
-    "lint": "tslint -c ./config/tslint.json -p .",
+    "r":"rollup -w -c ./test/rollup.config.js",
+    "lint": "eslint -c ./config/tslint.json -p .",
     "compile": "tsc --build --pretty --verbose --listEmittedFiles",
-    "compile-watch": "tsc --build --watch",
+    "compile-watch": "tsc --build --listEmittedFiles --watch",
     "test3": "jest -c ./config/jest.config.js",
     "build": "rollup -c node:@zerollup/rollup-preset-ts"
   },

@@ -4,7 +4,8 @@ export {
     ExternalOption,
     RollupBuild, 
     RollupOutput,
-    Plugin
+    Plugin,
+    RollupError,SerializedTimings,RollupWarning
 } from 'rollup';
 
 

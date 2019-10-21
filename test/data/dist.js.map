@@ -1,0 +1,1 @@
+{"version":3,"file":"dist.js","sources":["index.ts"],"sourcesContent":["export const enum OO {\n    O = '334',\n    P = '334',\n    R = 'ookdf'\n}"],"names":["OO"],"mappings":";;;;;;IAAA,WAAkB,EAAE;QAChB,eAAS,CAAA;QACT,eAAS,CAAA;QACT,iBAAW,CAAA;IACf,CAAC,EAJiBA,UAAE,KAAFA,UAAE,QAInB;;;;;;;;"}

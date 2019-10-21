@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base",
+  "compilerOptions": {
+    "declaration": true,
+    
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx" 
+  ],
+  "exclude": [
+    "test",
+    "__ignored__",
+    "node_modules",
+    "build",
+    "dist"
+  ]  
+}

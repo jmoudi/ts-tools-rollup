@@ -1,29 +1,17 @@
 import {rollup, RollupWarning, InputOption} from 'rollup';
-import {RollupOptions} from '../types';
+import {RollupOptions,RollupBuild} from '../types';
 import * as path from 'path';
 //import { findRoot } from '@lib/path';
 //import { reduce, mergeDeep } from 'lodash';
 import { reduce, merge as mergeL } from 'lodash';
-import { 
-    ResolvePlugin, 
-    CommonjsPlugin, 
-    TypescriptPlugin, 
-    SourcemapsPlugin 
-} from './../plugins';
 import { isObject, isString } from 'util';
 //import { readConfigFile } from 'typescript';
-import { basename, extname, isAbsolute, relative } from './path';
-
+ 
 export function merge(...configs: Partial<RollupOptions>[]){
     const finalConfig:RollupOptions={};
     return mergeL(finalConfig, ...configs);
 }
-
-
-
  
-
-
 
 /*
 export function findRoots(input: InputOption){

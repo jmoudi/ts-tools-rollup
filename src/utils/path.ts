@@ -1,3 +1,6 @@
+import { basename, extname, relative } from './path';
+
+
 const absolutePath = /^(?:\/|(?:[A-Za-z]:)?[\\|/])/;
 const relativePath = /^\.?\.\//;
 

@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+
+    /***** DEBUG *****/
+    "noErrorTruncation": true,
+    "pretty": true,
+    "noEmitOnError": false,
+
+    /***** TRANSPILATION *****/
+    //"module": "commonjs",
+    "target": "esnext",
+    "lib": [ "es2017", "es2018.regexp", "dom",  "dom.iterable", "esnext","esnext.asynciterable",  "esnext.symbol", "es2015.symbol.wellknown"
+    ],
+    
+    /***** SOURCES *****/
+    "sourceMap": true,
+/*     "inlineSources": true,
+    "inlineSourceMap": true, */
+    /***** DECLARATION *****/
+    "declaration": true,
+    "declarationMap": true,
+    /***** INTEROP *****/
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    //"noResolve": false,
+
+    /***** CHECKING *****/
+    "strictPropertyInitialization": false,
+    "suppressExcessPropertyErrors": true,
+    "keyofStringsOnly":true,
+    "suppressImplicitAnyIndexErrors":true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "noImplicitReturns": false,
+    "strictNullChecks": false,
+    "preserveConstEnums": true,
+    "noStrictGenericChecks": true,
+
+    "strict": true,
+    "alwaysStrict": false,
+    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react"
+    
+  },
+  "exclude": [
+    "**/node_modules/**",
+    "**/__ignored__/**",
+    "**/.cache/**",
+    "**/.tmp/**",
+    "**/.temp/**",
+    "**/.config/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}

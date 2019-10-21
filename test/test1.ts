@@ -8,7 +8,12 @@ import path from 'path';
 import { terser as minify } from 'rollup-plugin-terser';
 import {rollup, RollupOptions} from 'rollup';
 
-
+const tsconfigOverride = {
+  compilerOptions: { 
+    module: 'ESNext',
+    declaration: true 
+  }
+}
 function onWarn(message) {
     const suppressed = ['UNRESOLVED_IMPORT', 'THIS_IS_UNDEFINED'];
   
@@ -38,9 +43,9 @@ const r = rollup({
         module: true,
       }),
       //@ts-ignore
-      TypescriptPlugin({ typescript  }), //tsconfig
+      TypescriptPlugin({ typescript, tsconfigOverride }), //tsconfig
       //@ts-ignore
-      invariantPlugin({
+      InvariantPlugin({
         // Instead of completely stripping InvariantError messages in
         // production, this option assigns a numeric code to the
         // production version of each error (unique to the call/throw

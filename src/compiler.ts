@@ -1,1 +1,0 @@
-import compiler from '@ampproject/rollup-plugin-closure-compiler';

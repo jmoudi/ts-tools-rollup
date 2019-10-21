@@ -3,52 +3,61 @@ import {
     ResolvePlugin,
     TypescriptPlugin,
     InvariantPlugin
-} from './plugins';
-import path from 'path';
-import { terser as minify } from 'rollup-plugin-terser';
-import {rollup, RollupOptions} from 'rollup';
+} from '@/plugins';
+import { RollupOptions } from '@/types';
 
-
+ const tsconfigOverride1 = {
+    compilerOptions: {
+        module: 'ESNext',
+        sourceMap: true,
+        declaration: true
+     
+    }
+  } 
 
 function onWarn(message) {
     const suppressed = ['UNRESOLVED_IMPORT', 'THIS_IS_UNDEFINED'];
-  
     if (!suppressed.find(code => message.code === code)) {
-      return console.warn(message.message);
+        return console.warn(message.message);
     }
-  }
+}
 
 const cfg = {
-    input: './test/data/index.ts',
-    output: './dd.js'
+    input: './src/index.ts',
+    output: './dist/aaa.js'
 
 }
-const r = rollup({
+export const baseConfig: RollupOptions = {
     input: cfg.input,
     output: {
-      file: cfg.output,
-      format: 'umd',
-      sourcemap: true,
+        file: cfg.output,
+        format: 'umd',
+        sourcemap: true,
     },
     plugins: [
-      ResolvePlugin({
-        extensions: ['.ts', '.tsx'],
-        module: true,
-      }),
-      TypescriptPlugin({ typescript  }), //tsconfig
-      invariantPlugin({
-        // Instead of completely stripping InvariantError messages in
-        // production, this option assigns a numeric code to the
-        // production version of each error (unique to the call/throw
-        // location), which makes it much easier to trace production
-        // errors back to the unminified code where they were thrown,
-        // where the full error string can be found. See #4519.
-        errorCodes: true,
-      }),
-    ],
-    onWarn,
-});
+        ResolvePlugin({
+            extensions: ['.ts', '.tsx'],
+            module: true,
+        }),
+        TypescriptPlugin({ 
+          typescript,
+          tsconfigOverride: tsconfigOverride1
+        }), //tsconfig
 
+        //@ts-ignore
+        InvariantPlugin({
+            // Instead of completely stripping InvariantError messages in
+            // production, this option assigns a numeric code to the
+            // production version of each error (unique to the call/throw
+            // location), which makes it much easier to trace production
+            // errors back to the unminified code where they were thrown,
+            // where the full error string can be found. See #4519.
+            errorCodes: true,
+        }),
+    ],
+    onwarn: onWarn,
+};
+/*
 export function rollup1({
   name,
   input = './src/index.ts',
@@ -137,3 +146,4 @@ export function rollup1({
     },
   ];
 }
+ */
