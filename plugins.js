@@ -1,2 +1,2 @@
 'use strict';
-export * from './dist/plugins.js';
+export * from './src/plugins.js';

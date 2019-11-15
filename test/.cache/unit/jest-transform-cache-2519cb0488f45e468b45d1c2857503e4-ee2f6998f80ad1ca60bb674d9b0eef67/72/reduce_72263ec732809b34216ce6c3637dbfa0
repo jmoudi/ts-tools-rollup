@@ -1,8 +1,0 @@
-4b9167b889abd6e97f6d4c4a5d29f2d1
-"use strict";
-//export {reduce} from 'underscore';
-Object.defineProperty(exports, "__esModule", { value: true });
-var lodash_1 = require("lodash");
-exports.reduce = lodash_1.reduce;
-/* import reduce = require('lodash/reduce');
-import reduceRight = require('lodash/reduceRight'); */ 

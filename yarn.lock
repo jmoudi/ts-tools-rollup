@@ -300,6 +300,11 @@ decode-uri-component@^0.2.0:
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
@@ -880,6 +885,14 @@ rollup-plugin-terser@:
     serialize-javascript "^1.7.0"
     terser "^4.1.0"
 
+rollup-plugin-ts-paths@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-ts-paths/-/rollup-plugin-ts-paths-1.0.3.tgz#ba912d133de27f96a0dc62b9f72c04b1de3c90b1"
+  integrity sha512-JjFzmlDr8eICMenFoiEI0SAhlT6hl7YnM+DO6sOHvF6JV1F7EAMmieJMISrLFTfy9uC26st0vS2HX2P89Mtwuw==
+  dependencies:
+    strip-bom "^3.0.0"
+    strip-json-comments "^2.0.1"
+
 rollup-plugin-typescript2@:
   version "0.24.3"
   resolved "https://registry.yarnpkg.com/rollup-plugin-typescript2/-/rollup-plugin-typescript2-0.24.3.tgz#276fa33a9d584d500da62d3e5400307f4a46bdf2"
@@ -1051,6 +1064,11 @@ strip-bom@^3.0.0:
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
   integrity sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
 
+strip-json-comments@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+  integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -1110,7 +1128,7 @@ ts-transform-paths@:
   resolved "https://registry.yarnpkg.com/ts-transform-paths/-/ts-transform-paths-2.0.0.tgz#d82e2a76a3d59f7433da30b4430792ce3d7508e6"
   integrity sha512-w+b7M6oiR5VwsdHrNiHpnJmLJZaB9RrBh0ylB6/dz923Qr6/vV7tUl5EN3YIx1gMHiIF0L+NpGjfwgKARGYK/g==
 
-tslib@1.10.0, tslib@^1.9.3:
+tslib@1.10.0, tslib@^1.10.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==

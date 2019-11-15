@@ -1,9 +1,9 @@
 import {cyan,green,
 	underline,gray,red,
-	yellow,bold,dim} from '@/logger/color';
-import { RollupError,SerializedTimings,RollupWarning } from '@/types';
-import {ms,dateTime,prettyBytes} from '@/logger/format';
-import {relativeId} from '@/utils';
+	yellow,bold,dim} from '../logger/color';
+import { RollupError,SerializedTimings,RollupWarning } from '../types';
+import {ms,dateTime,prettyBytes} from '../logger/format';
+import {relativeId} from '../utils';
 
 // log to stderr to keep `rollup main.js > bundle.js` from breaking
 export const stderr = console.error.bind(console); // eslint-disable-line no-console

@@ -1,1 +1,0 @@
-{"file":"/home/jm/Projects/Modules/path/src/findRoot.ts","mappings":";;AAAA,sCAAuC;AAC/B,4BAAQ","names":[],"sources":["/home/jm/Projects/Modules/path/src/findRoot.ts"],"sourcesContent":["import findRoot = require('find-root');\r\nexport {findRoot}\r\n\r\n"],"version":3}

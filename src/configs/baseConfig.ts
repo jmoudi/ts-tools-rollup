@@ -1,15 +1,23 @@
-import typescript from 'typescript';
 import {
     ResolvePlugin,
     TypescriptPlugin,
-    InvariantPlugin
-} from '@/plugins';
-import { RollupOptions } from '@/types';
+    InvariantPlugin,
+    CommonjsPlugin,
+    SourcemapsPlugin,
+    SourceMapsPlugin,
+    TsTransformPathsPlugins
+} from '../plugins';
+import { RollupOptions } from '../types';
+
+import typescript from 'typescript';
+import tslib from 'tslib';
+export {tslib}
 
  const tsconfigOverride1 = {
     compilerOptions: {
         module: 'ESNext',
         sourceMap: true,
+        // evtl because of declaration problems?????
         declaration: true
      
     }
@@ -22,41 +30,55 @@ function onWarn(message) {
     }
 }
 
-const cfg = {
-    input: './src/index.ts',
-    output: './dist/aaa.js'
+const baseConfigDefaults = {
+  input: './src/index.ts',
+  output: {
 
+  }
 }
-export const baseConfig: RollupOptions = {
-    input: cfg.input,
+
+export const BaseConfig: RollupOptions = {
+    //input: cfg.input,
     output: {
-        file: cfg.output,
+        //file: cfg.output,
         format: 'umd',
         sourcemap: true,
+        //name: cfg.name,
+        exports: 'named'
     },
     plugins: [
-        ResolvePlugin({
-            extensions: ['.ts', '.tsx'],
-            module: true,
-        }),
-        TypescriptPlugin({ 
-          typescript,
-          tsconfigOverride: tsconfigOverride1
-        }), //tsconfig
 
-        //@ts-ignore
-        InvariantPlugin({
-            // Instead of completely stripping InvariantError messages in
-            // production, this option assigns a numeric code to the
-            // production version of each error (unique to the call/throw
-            // location), which makes it much easier to trace production
-            // errors back to the unminified code where they were thrown,
-            // where the full error string can be found. See #4519.
-            errorCodes: true,
-        }),
+      ResolvePlugin({
+        extensions: ['.ts', '.tsx', '.js', '.json', '.jsx', '.node' ]
+    /*     main: true,
+        module: true,
+        extensions: [ ], */
+        //preferBuiltins: false
+      }), // so Rollup can find 'ms'
+
+      CommonjsPlugin({
+        include: 'node_modules/**'
+        //include: [/node_modules/]
+      }), // so Rollup can convert `ms` to an ES module
+      //SourceMapsPlugin(),
+      TypescriptPlugin({ 
+        verbosity: 2,
+        clean: false,
+        //useTsconfigDeclarationDir: true,
+        typescript,
+        tsconfigOverride: tsconfigOverride1
+      }), //tsconfig
+      // @ts-ignore
+      SourcemapsPlugin({ include: 'node_modules/**' }), //SourcemapsPlugin({include: [/node_modules/]}),
+          
+      
+      //TsTransformPathsPlugins(),
     ],
     onwarn: onWarn,
 };
+export const baseConfig = () => {
+  return BaseConfig;
+}
 /*
 export function rollup1({
   name,

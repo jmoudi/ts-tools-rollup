@@ -1,6 +1,6 @@
 import {rollup, RollupWarning, InputOption} from 'rollup';
 import {RollupOptions,RollupBuild} from '../types';
-import * as path from 'path';
+
 //import { findRoot } from '@lib/path';
 //import { reduce, mergeDeep } from 'lodash';
 import { reduce, merge as mergeL } from 'lodash';

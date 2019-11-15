@@ -1,3 +1,4 @@
+//import { mergeOptions } from 'src/utils/mergeOptions';
 /* import {watch} from '@/run/watch';
 import {build} from '@/run/build'; */
 import {
@@ -8,14 +9,15 @@ import {
 	OutputOptions,
 	RollupBuild,
 	RollupError,
-	RollupWatchOptions
+	RollupWatchOptions 
 } from 'rollup';
+import {} from 'rollup/dist/rollup.es.js'
 import { 
 	BatchWarnings,printTimings,batchWarnings,
     handleError, stderr } from './logging';
 import {cyan,green,
     underline,gray,red,
-    yellow,bold,dim} from '@/logger/color';
+    yellow,bold,dim} from '../logger/color';
 import {merge} from '@/utils';
 
 

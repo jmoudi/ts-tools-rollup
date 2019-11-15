@@ -1,4 +1,0 @@
-dc953a5cdf116303d0d1e6b552f66401
-module.exports = {
-    input: '@/test/data/t1.ts',
-}

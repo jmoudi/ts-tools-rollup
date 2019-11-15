@@ -1,3 +1,3 @@
-const {baseConfig} = require('/home/jm/Projects/Config/jest/jest.base.js');
-console.log(baseConfig())
-module.exports = Object.assign({}, baseConfig());
+// @ts-check
+const baseConfig = require('/home/jm/Projects/Config/jest.base');
+module.exports = baseConfig({});

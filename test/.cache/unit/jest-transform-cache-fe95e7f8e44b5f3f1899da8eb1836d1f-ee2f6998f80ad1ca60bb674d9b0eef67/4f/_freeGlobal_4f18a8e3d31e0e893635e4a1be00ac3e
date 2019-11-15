@@ -1,5 +1,0 @@
-9478ddab8e8d869279ad5f823fcd884c
-/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
-
-module.exports = freeGlobal;

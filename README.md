@@ -1,3 +1,31 @@
+
+
+
+
+cwd example; rollup -c rollup.config.js
+
+
+    commonjs(),
+    // Allow node_modules resolution, so you can use 'external' to control
+    // which external modules to include in the bundle
+    // https://github.com/rollup/rollup-plugin-node-resolve#usage
+    resolve(),
+
+
+
+
+            tsconfig: path.join(__dirname, 'tsconfig.json'),
+                        tsconfigOverride: {
+                            compilerOptions: {
+                                paths: null,
+                                rootDir: srcDir
+                            },
+                            include: [srcDir]
+                        }
+
+
+
+
 		"watch": "ts-node-dev --transpileOnly --respawn --prefer-ts --require /home/jm/Projects/Tools/node-debug/src/loadpaths.ts  ./src/watcher.ts",
 
 ts-node-dev --transpileOnly --respawn --prefer-ts ./test/test1.ts

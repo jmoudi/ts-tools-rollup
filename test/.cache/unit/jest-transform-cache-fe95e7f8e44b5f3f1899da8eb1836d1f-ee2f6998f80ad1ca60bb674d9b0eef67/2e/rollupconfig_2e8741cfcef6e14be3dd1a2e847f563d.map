@@ -1,1 +1,0 @@
-{"file":"/home/jm/Projects/Modules/tools/rollup/test/data/rollup.config.ts","mappings":";;AAAA,kBAAe;IACX,KAAK,EAAE,mBAAmB;CAC7B,CAAA","names":[],"sources":["/home/jm/Projects/Modules/tools/rollup/test/data/rollup.config.ts"],"sourcesContent":["export default {\n    input: '@/test/data/t1.ts',\n}"],"version":3}

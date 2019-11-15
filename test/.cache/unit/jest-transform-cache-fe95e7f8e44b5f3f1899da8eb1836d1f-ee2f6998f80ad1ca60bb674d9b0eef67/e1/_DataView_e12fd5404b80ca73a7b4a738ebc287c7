@@ -1,8 +1,0 @@
-53160c15f9901d944fcd60dc8d89a9f5
-var getNative = require('./_getNative'),
-    root = require('./_root');
-
-/* Built-in method references that are verified to be native. */
-var DataView = getNative(root, 'DataView');
-
-module.exports = DataView;
