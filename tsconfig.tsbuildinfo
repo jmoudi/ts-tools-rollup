@@ -394,15 +394,15 @@
         "signature": "43fd1d36a05b91f05a23faa202f9e853887e23315e6ee6328bf25c1c7c56e3c8"
       },
       "./src/plugins.ts": {
-        "version": "0c2887980b8ccbab2bec04f78c3efd7bc894dd506fd40fd8ea10ac0c81b4d76c",
-        "signature": "dda81b5b64b1a7c19cdc3f284f043e7768132cfe0127b91f1f4306b6319d8791"
+        "version": "8c99af15f4a1c39ac73c4b0a06d23e8231d6e89522a4e3e28469d2aa7138a717",
+        "signature": "07e48349df6a2f0e1d2d7b2ffec08e940a1c75a12fd2552ad369c007834c348c"
       },
       "./node_modules/tslib/tslib.d.ts": {
         "version": "4984b48a97160eac5282ffeae690315420a626de83ccf6045c36d934c5c957c0",
         "signature": "4984b48a97160eac5282ffeae690315420a626de83ccf6045c36d934c5c957c0"
       },
       "./src/configs/baseConfig.ts": {
-        "version": "8c6535e27efa58e10d4d15c11b0afe4c6951fc09884fdf5d0e481dea7f144c4f",
+        "version": "59cdf9f5d4f3401b338c32f8f9bf95d8389475d31065eaaf4c0aeb0188121243",
         "signature": "12471569042afd57c258d18c0a35fbfae60c354a6bf6aefbdab72dc8c735d040"
       },
       "./src/configs/index.ts": {
@@ -2646,7 +2646,7 @@
         "signature": "e8798e0aca8c5e310e339659241c5de2269591c646111a2bfda4692ff3f5c30e"
       },
       "./src/configs/bundleConfig.ts": {
-        "version": "8a81c8b79666656c818f1d5df23ec818ad20c51b89ae0bda3a3d3c500a2257aa",
+        "version": "ca025f71207b578efb0ca90010699bb4530e48d43e72188f5244c8ef73ad59af",
         "signature": "1bc1ae70624ce1d427fbd7027034658e74d56341a07855631359d15b11913651"
       },
       "./node_modules/@types/jest-diff/index.d.ts": {
@@ -7283,6 +7283,10 @@
         "./node_modules/rollup-plugin-ts-paths/dist/rollup-plugin-ts-paths.d.ts",
         "./node_modules/@zerollup/ts-transform-paths/dist/index.d.ts"
       ],
+      "./node_modules/tslib/tslib.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./src/configs/baseConfig.ts": [
         "./node_modules/tslib/tslib.d.ts",
         "./src/types.ts"
@@ -10749,10 +10753,6 @@
       "./node_modules/@types/signal-exit/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/tslib/tslib.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -10855,6 +10855,8 @@
       "./node_modules/rollup-plugin-ts-paths/dist/rollup-plugin-ts-paths.d.ts",
       "./node_modules/@zerollup/ts-transform-paths/dist/index.d.ts",
       "./src/plugins.ts",
+      "./node_modules/tslib/tslib.d.ts",
+      "./src/configs/index.ts",
       "./node_modules/colorette/colorette.d.ts",
       "./src/logger/color.ts",
       "./node_modules/pretty-bytes/index.d.ts",
@@ -11413,15 +11415,13 @@
       "./src/runner/build.ts",
       "./src/runner/run.ts",
       "./src/runner/index.ts",
+      "./src/index.ts",
       "./src/configs/bundleConfig.ts",
       "./node_modules/@types/jest-diff/index.d.ts",
       "./node_modules/@types/jest/index.d.ts",
       "./node_modules/@types/require-relative/index.d.ts",
       "./node_modules/@types/signal-exit/index.d.ts",
-      "./node_modules/tslib/tslib.d.ts",
-      "./src/configs/baseConfig.ts",
-      "./src/configs/index.ts",
-      "./src/index.ts"
+      "./src/configs/baseConfig.ts"
     ]
   },
   "version": "3.6.4"

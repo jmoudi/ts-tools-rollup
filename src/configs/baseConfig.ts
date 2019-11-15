@@ -56,18 +56,28 @@ export const BaseConfig: RollupOptions = {
         //preferBuiltins: false
       }), // so Rollup can find 'ms'
 
-      CommonjsPlugin({
+/*       CommonjsPlugin({
         include: 'node_modules/**'
         //include: [/node_modules/]
-      }), // so Rollup can convert `ms` to an ES module
+      }), // so Rollup can convert `ms` to an ES module */
+
       //SourceMapsPlugin(),
       TypescriptPlugin({ 
+        //check: false,
+        abortOnError: true,
         verbosity: 2,
-        clean: false,
+        clean: true,
         //useTsconfigDeclarationDir: true,
-        typescript,
-        tsconfigOverride: tsconfigOverride1
+        //typescript,
+        tsconfigOverride: tsconfigOverride1,
+        //rollupCommonJSResolveHack: true
+/* 
+        If true, declaration files will be emitted in the directory given in the tsconfig. If false, the declaration files will be placed inside the destination directory given in the Rollup configuration.
+
+        Set to false if any other rollup plugins need access to declaration files. */
+        //seTsconfigDeclarationDir: false
       }), //tsconfig
+
       // @ts-ignore
       SourcemapsPlugin({ include: 'node_modules/**' }), //SourcemapsPlugin({include: [/node_modules/]}),
           

@@ -8,6 +8,7 @@
     "rootDir": "./src",
     "outDir": "./dist/"
   },
+  "references": [{"path": "../../ts/core/fp"}],
   "include": [ "./src/**/*.ts", "./src/**/*.tsx" ],
   "exclude": ["__ignored__"]
 }

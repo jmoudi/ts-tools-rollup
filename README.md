@@ -11,6 +11,7 @@ cwd example; rollup -c rollup.config.js
     // https://github.com/rollup/rollup-plugin-node-resolve#usage
     resolve(),
 
+  "references": [{"path": "../../../../.lib/yarn/node_modules"}],
 
 
 

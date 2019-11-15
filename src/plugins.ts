@@ -17,6 +17,21 @@ export {
     CommonjsPlugin,
     SourcemapsPlugin,
     SourceMapsPlugin,
+    /**
+     * Compatibility
+rollup-plugin-node-resolve
+
+Must be before rollup-plugin-typescript2 in the plugin list, especially when browser: true option is used, see #66
+rollup-plugin-commonjs
+
+See explanation for rollupCommonJSResolveHack option below.
+plugins using async/await
+
+See objectHashIgnoreUnknownHack below.
+rollup-plugin-babel
+
+This plugin transpiles code, but doesn't change file extension. Babel plugin, even though it claims it processes all files, only looks at code with those extensions by default: .js,.jsx,.es6,.es,.mjs. To workaround add ts and tsx to the list of babel extensions.
+     */
     TypescriptPlugin,
     ReplacePlugin,
 }
