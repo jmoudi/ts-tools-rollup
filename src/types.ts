@@ -2,6 +2,7 @@ export {
     RollupOptions, 
     InputOptions,InputOption, 
     ExternalOption,
+    OutputOptions,
     RollupBuild, 
     RollupOutput,
     Plugin,

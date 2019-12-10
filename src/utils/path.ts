@@ -1,5 +1,6 @@
 import { basename, extname, relative } from './path';
 
+//import { findRoot } from '@lib/path';
 
 const absolutePath = /^(?:\/|(?:[A-Za-z]:)?[\\|/])/;
 const relativePath = /^\.?\.\//;

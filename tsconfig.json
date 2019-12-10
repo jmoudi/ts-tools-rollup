@@ -1,14 +1,17 @@
 {
   "extends": "/home/jm/Projects/Config/tsc/tsconfig.module",
   "compilerOptions": {
+    "rootDir": "./src/",
+    "outDir": "./dist/",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    },
-    "rootDir": "./src",
-    "outDir": "./dist/"
+      "@/*": ["./src/*"],
+      "@std/fp": [ "/home/jm/Projects/Modules/ts/core/fp" ] // important
+    }
   },
-  "references": [{"path": "../../ts/core/fp"}],
+  "references": [
+    {"path": "../../core/fp"}
+  ],
   "include": [ "./src/**/*.ts", "./src/**/*.tsx" ],
   "exclude": ["__ignored__"]
 }

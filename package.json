@@ -1,8 +1,11 @@
 {
-  "name": "@tools/rollup",
+  "name": "rollup-tools",
   "version": "1.0.4",
   "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
+    "compile": "tsc -b -i --pretty --verbose --listEmittedFiles",
+    "compile-watch": "tsc -b -i --listEmittedFiles --watch",
     "run1": "ts-node-dev --transpileOnly --respawn --prefer-ts --require /home/jm/Projects/Tools/node/ts-node-dev/src/loadpaths.ts ./test/build.ts",
     "run:test": "ts-node-dev --transpileOnly --respawn --prefer-ts ./test/build.ts",
     "run": "ts-node-dev --transpileOnly --respawn --prefer-ts ./src/main.ts",
@@ -10,8 +13,6 @@
     "test:nw": "jest",
     "r": "rollup -w -c ./test/rollup.config.js",
     "lint": "eslint -c ./config/tslint.json -p .",
-    "compile": "tsc --build --pretty --verbose --listEmittedFiles",
-    "compile-watch": "tsc --build --listEmittedFiles --watch",
     "test3": "jest -c ./config/jest.config.js",
     "build": "rollup -c node:@zerollup/rollup-preset-ts"
   },
@@ -26,6 +27,7 @@
     "colorette": "",
     "date-time": "",
     "deepmerge": "^4.2.2",
+    "fp-ts": "^2.1.2",
     "lodash": "",
     "pretty-bytes": "",
     "pretty-ms": "",
@@ -59,5 +61,10 @@
     "@types/node": ""
   },
   "private": true,
-  "author": "Jonas Moudi"
+  "author": "Jonas Moudi <jonas.moudi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmoudi/ts-tools-rollup.git"
+  },
+  "license": "MIT"
 }

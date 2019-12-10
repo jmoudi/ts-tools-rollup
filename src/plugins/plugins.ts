@@ -1,4 +1,3 @@
-import {Plugin} from './types';
 import ResolvePlugin from 'rollup-plugin-node-resolve'
 import CommonjsPlugin from 'rollup-plugin-commonjs'
 import SourcemapsPlugin, {default as SourceMapsPlugin} from 'rollup-plugin-sourcemaps';
@@ -7,13 +6,28 @@ import ReplacePlugin from 'rollup-plugin-replace';
 import InvariantPlugin from 'rollup-plugin-invariant';
 import TsPathsPlugins from 'rollup-plugin-ts-paths';
 import TsTransformPathsPlugins from '@zerollup/ts-transform-paths';
+import AliasPlugin from 'rollup-plugin-alias'
+import ImportAliasPlugin from 'rollup-plugin-import-alias'
 
 
 export {
+    ImportAliasPlugin,
+    AliasPlugin,
     TsTransformPathsPlugins,
     TsPathsPlugins,
     InvariantPlugin,
+
+        // Allow node_modules resolution, so you can use 'external' to control
+    // which external modules to include in the bundle
+    // https://github.com/rollup/rollup-plugin-node-resolve#usage
     ResolvePlugin, 
+
+    /**
+     * Symlinks are common in monorepos and are also created by the npm link command.
+     * Rollup with rollup-plugin-node-resolve resolves modules to their real paths by default. So include and exclude paths should handle real paths rather than symlinked paths (e.g. ../common/node_modules/** instead of node_modules/**). 
+     * You may also use a regular expression for include that works regardless of base path. Try this:
+     * Whether symlinked module paths are realpathed or preserved depends on Rollup's preserveSymlinks setting, which is false by default, matching Node.js' default behavior. Setting preserveSymlinks to true in your Rollup config will cause import and export to match based on symlinked paths instead.
+     */
     CommonjsPlugin,
     SourcemapsPlugin,
     SourceMapsPlugin,

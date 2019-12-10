@@ -1,11 +1,12 @@
  
-import {} from '..';
-
+//import {} from '..';
+ 
+import {groupBy} from '@std/fp';
 const log = console.log
 
 describe('', () => {
     test('', async () => {
-        const res = 0//await ();
+        const res = groupBy //await ();
         log('', res);
         expect(res).toBeDefined();
     });

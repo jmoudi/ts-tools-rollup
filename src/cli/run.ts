@@ -14,12 +14,12 @@ import {
 import {} from 'rollup/dist/rollup.es.js'
 import { 
 	BatchWarnings,printTimings,batchWarnings,
-    handleError, stderr } from './logging';
+    handleError, stderr } from '../runner/handlers';
 import {cyan,green,
     underline,gray,red,
-    yellow,bold,dim} from '../logger/color';
-import {merge} from '@/utils';
+    yellow,bold,dim} from '../utils/color';
 
+    
 
 declare const useStdout: any;
 declare const outputOptions: any;
